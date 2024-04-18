@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ubuntu/simple-nodejs-app
+    destination: /root/Nodejs_deployement_new_cicd/node_deployment
 
 hooks:
   AfterInstall:

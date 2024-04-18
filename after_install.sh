@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /root/NodeJs_Deployemnt/node_deployment
+cd /root/Nodejs_deployement_new_cicd/node_deployment
 
 # Install dependencies using npm
 npm install
