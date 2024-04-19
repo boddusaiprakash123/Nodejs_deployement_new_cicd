@@ -13,15 +13,16 @@ phases:
   build:
     commands:
       - echo Build completed on `date`
-
+      
 artifacts:
   files:
     - '**/*'
   discard-paths: yes
-  base-directory: 'path/to/your/artifacts'  # Specify the directory where your build artifacts are located
   name: 'my-nodejs-app-artifact'  # Replace 'my-nodejs-app-artifact' with your desired artifact name
-  # Specify S3 bucket where artifacts will be uploaded after build completion
-  # Replace 'your-s3-bucket' with your actual S3 bucket name
-  s3:
-    bucket: 's3://artifacts-007'
-   
+
+post_build:
+  commands:
+    # Archive all artifacts into a zip file
+    - zip -r artifacts.zip .
+    # Upload the zip file to S3
+    - aws s3 cp artifacts.zip s3://artifacts-007/test/
