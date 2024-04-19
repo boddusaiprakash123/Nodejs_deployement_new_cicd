@@ -24,4 +24,4 @@ artifacts:
   # Replace 'your-s3-bucket' with your actual S3 bucket name
   s3:
     bucket: 's3://artifacts-007'
-    path: 's3://artifacts-007/test/'  # Optional: Specify a path within the bucket if needed
+   
