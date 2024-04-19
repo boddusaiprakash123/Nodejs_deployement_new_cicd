@@ -10,7 +10,18 @@ phases:
         - npm install
     commands:
       - echo Build started on `date`
-  post_build:
+  build:
     commands:
       - echo Build completed on `date`
 
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
+  base-directory: 'path/to/your/artifacts'  # Specify the directory where your build artifacts are located
+  name: 'my-nodejs-app-artifact'  # Replace 'my-nodejs-app-artifact' with your desired artifact name
+  # Specify S3 bucket where artifacts will be uploaded after build completion
+  # Replace 'your-s3-bucket' with your actual S3 bucket name
+  s3:
+    bucket: 's3://artifacts-007'
+    path: 's3://artifacts-007/test/'  # Optional: Specify a path within the bucket if needed
