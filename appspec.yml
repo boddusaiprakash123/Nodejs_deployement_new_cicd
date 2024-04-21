@@ -7,9 +7,16 @@ files:
 
 hooks:
   AfterInstall:
-    - location: /root/Nodejs_deployement_new_cicd/node_deployment/after_install.sh
+    - location: scripts/after_install.sh
       timeout: 300
+      runas: root
+      permissions:
+        - object: '*.sh'
+          pattern: chmod +x {FILE}
   ApplicationStart:
-    - location:  /root/Nodejs_deployement_new_cicd/node_deployment/application_start.sh
+    - location: scripts/application_start.sh
       timeout: 300
-
+      runas: root
+      permissions:
+        - object: '*.sh'
+          pattern: chmod +x {FILE}
