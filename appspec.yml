@@ -7,9 +7,9 @@ files:
 
 hooks:
   AfterInstall:
-    - location: deploy/after_install.sh
+    - location: /root/Nodejs_deployment_new_cicd/after_install.sh
       timeout: 300
   ApplicationStart:
-    - location: deploy/application_start.sh
+    - location:  /root/Nodejs_deployment_new_cicd/application_start.sh
       timeout: 300
 
