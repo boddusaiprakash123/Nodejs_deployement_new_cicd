@@ -2,7 +2,7 @@
 
 # Define the paths
 deployment_dir="/root/Nodejs_deployement_new_cicd/node_deployment"
-new_app_path="/path/to/your/new/app.js"
+new_app_path="/root/Nodejs_deployement_new_cicd/node_deployment/app.js"
 new_package_json_path="/root/Nodejs_deployement_new_cicd/node_deployment/package.json"
 
 # Remove the existing app.js file if it exists
