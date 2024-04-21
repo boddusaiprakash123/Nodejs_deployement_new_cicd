@@ -1,22 +1,7 @@
-version: 0.0
-os: linux
-
 files:
   - source: .
     destination: /root/Nodejs_deployement_new_cicd/node_deployment
-
-hooks:
-  AfterInstall:
-    - location: scripts/after_install.sh
-      timeout: 300
-      runas: root
-      permissions:
-        - object: '*.sh'
-          pattern: chmod +x {FILE}
-  ApplicationStart:
-    - location: scripts/application_start.sh
-      timeout: 300
-      runas: root
-      permissions:
-        - object: '*.sh'
-          pattern: chmod +x {FILE}
+	
+      commands:
+        - npm install
+        - pm2 start app.js
