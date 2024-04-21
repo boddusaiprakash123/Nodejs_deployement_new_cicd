@@ -3,20 +3,14 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
-    pre_build:
-      commands:
-        - echo Installing source node dependencies...
-        - cd /root/Nodejs_deployement_new_cicd/node_deployment
-        - npm install
+      nodejs: 16
+    commands:
+      - echo Installing source node dependencies...
+      - npm install
+  build:
     commands:
       - echo Build started on `date`
+      - echo Compiling the node code
   post_build:
     commands:
-      # Start the application using PM2
-        - pm2 start /root/Nodejs_deployement_new_cicd/node_deployment/app.js
-artifacts:
-  files:
-    - '**/*'
-  discard-paths: yes
-  name: 'my-nodejs-app-artifact'  # Replace 'my-nodejs-app-artifact' with your desired artifact name
+      - echo Build completed on `date`
