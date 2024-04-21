@@ -7,22 +7,17 @@ phases:
     pre_build:
       commands:
         - echo Installing source node dependencies...
+        - cd /root/Nodejs_deployement_new_cicd/node_deployment
         - npm install
     commands:
       - echo Build started on `date`
-  build:
+  post_build:
     commands:
-      - echo Build completed on `date`
-      
+      # Start the application using PM2
+      - pm2 start app.js
+
 artifacts:
   files:
     - '**/*'
   discard-paths: yes
   name: 'my-nodejs-app-artifact'  # Replace 'my-nodejs-app-artifact' with your desired artifact name
-
-post_build:
-  commands:
-    # Archive all artifacts into a zip file
-    - zip -r artifacts.zip .
-    # Upload the zip file to S3
-    - aws s3 cp artifacts.zip s3://artifacts-007/test/
