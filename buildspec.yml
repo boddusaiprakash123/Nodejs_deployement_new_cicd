@@ -6,6 +6,7 @@ phases:
       nodejs: 16
     commands:
       - echo Installing source node dependencies...
+      - cd /root/Nodejs_deployment-new_cicd/node_deployment
       - npm i --force
   build:
     commands:
