@@ -1,7 +1,10 @@
+version: 0.0
+os: linux
+
 files:
   - source: .
     destination: /root/Nodejs_deployement_new_cicd/node_deployment
-	
+hooks:
       commands:
         - npm install
         - pm2 start app.js
