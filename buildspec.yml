@@ -5,13 +5,16 @@ phases:
     runtime-versions:
       nodejs: 16
     commands:
-      - echo Installing source node dependencies...
-      - cd /root/Nodejs_deployment-new_cicd/node_deployment
-      - npm i --force
+      - npm install
+
   build:
     commands:
-      - echo Build started on `date`
-      - echo Compiling the node code
+      - npm run build
+
   post_build:
     commands:
-      - echo Build completed on `date`
+      - pm2 start app.js
+
+artifacts:
+  files:
+    - '**/*'
