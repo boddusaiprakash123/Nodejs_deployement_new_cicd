@@ -4,9 +4,6 @@ phases:
   install:
     runtime-versions:
       nodejs: 16
-    commands:
-      - cd /var/my-node-app/node_deployment
-      - npm install
 
   build:
     commands:
